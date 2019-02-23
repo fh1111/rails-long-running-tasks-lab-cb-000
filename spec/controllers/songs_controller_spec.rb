@@ -9,7 +9,7 @@ RSpec.describe SongsController do
 
     it "uploads and processes a file" do
       @file = fixture_file_upload('songs.csv', 'text/csv')
-      post :upload, :upload => @file
+      post :upload => @file
       #post :upload, file: fixture_file_upload('songs.csv', 'text/csv')
       expect(Song.all.count).to eq 13
       expect(Artist.all.count).to eq 6
